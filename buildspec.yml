@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Instalando dependencias"
+
+  pre_build:
+    commands:
+      - echo "Iniciando fase pre-build"
+
+  build:
+    commands:
+      - echo "Construyendo contenedor Docker"
+      - docker build -t flask-devops .
+
+  post_build:
+    commands:
+      - echo "Build completado correctamente"
+
+artifacts:
+  files:
+    - '**/*'
